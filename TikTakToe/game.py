@@ -89,7 +89,7 @@ def play(game, x_player, o_player, print_game=True):
 
         if game.make_move(sqaure, letter):
             if print_game:
-                print(letter + f' makes a move to sqaure{sqaure}')
+                print(letter + f' makes a move to sqaure {sqaure}')
                 game.print_board()
                 print('') # just empty line
 

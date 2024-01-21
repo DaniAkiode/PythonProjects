@@ -26,7 +26,7 @@ class HumanPlayer(Player):
         valid_square = False
         val = None
         while not valid_square:
-            sqaure = input(self.letter + '\s turn. Input Move (0-9):')
+            sqaure = input(self.letter + '\s turn. Input Move (0-8):')
             # we're going to check that this is a correct value by trying to cast
             # it to an integer, and if it's not, then we say it's invalid 
             # if that spot is not avalable on the board, we also say it's invalid if
