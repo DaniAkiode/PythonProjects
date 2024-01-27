@@ -49,7 +49,7 @@ class GeniusComputerPlayer(Player):
             sqaure = random.choice(game.available_moves())   # randomly choose one 
         else:
             # get the sqaure based off the minimax algorithm
-            sqaure = self.minimax(game, self.letter)
+            sqaure = self.minimax(game, self.letter)['position']
         return sqaure
     
     def minimax(self, state, player):
