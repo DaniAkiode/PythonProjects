@@ -54,7 +54,7 @@ class GeniusComputerPlayer(Player):
     
     def minimax(self, state, player):
         max_player = self.letter #Literally Yourself!
-        other_player = 'O' if player == 'X' else 'X' # the other plater (whenever the letter is NOT X)
+        other_player = 'O' if player == 'X' else 'X' # the other player (whenever the letter is NOT X)
 
 
         # first, we want to check if the previous move is a winner or
