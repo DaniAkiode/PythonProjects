@@ -123,7 +123,7 @@ if __name__ == '__main__':
     ties = 0 
     for _ in range(1000):
         x_player = RandomComputerPlayer('X')
-        o_player = GeniusComputerPlayer('O')
+        o_player = RandomComputerPlayer('O')
         t = TicTacToe()
         play(t, x_player, o_player, print_game=False)
         result = play(t, x_player, o_player, print_game=False)
