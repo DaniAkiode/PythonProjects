@@ -76,7 +76,7 @@ class Board:
 
         # make sure to not go out of bounds!
 
-        num_neighboring_boms = 0
+        num_neighboring_bombs = 0
         for r in range(max(0, row-1), min(self.dim_size-1, (row+1))+1):
             for c in range(max(0, col-1), min(self.dim_size-1, col+1)+1):
                 if r == row and c == col:
@@ -201,5 +201,5 @@ def play(dim_size=10, num_bombs=10):
             board.dig = [(r,c) for r in range(board.dim_size) for c in range(board.dim_size)]
             print(board)
 
-    if __name__ == '__main__': # good practice :)
-        play()
+if __name__ == '__main__': # good practice :)
+    play()
