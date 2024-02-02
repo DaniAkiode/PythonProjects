@@ -1,6 +1,7 @@
 import pyttsx3, PyPDF2
+from PyPDF2 import PdfReader
 
-pdfreader = PyPDF2.PdfFileReader(open('book.pdf','rb' ))
+pdfreader = PyPDF2.PdfReader(open('book.pdf','rb' ))
 speaker = pyttsx3.init()
 
 for page_num in range(pdfreader.numPages):
