@@ -28,7 +28,7 @@ class Board:
         # but since we have a 2-D board, lists of lists is most natural 
 
         #generate a new board
-        board = [[None for _ in range (self.dim_size)] for _ in range(self.dim_size)]
+        board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
         # this creates an array like this: board
         # [[None, None, ....None],
         #  [None, None, ....None],
@@ -43,7 +43,7 @@ class Board:
             row = loc // self.dim_size # we want the number of time dim_size goes into loc to tell us which row we are indexing in 
             col = loc % self.dim_size 
 
-            if board [row][col] =='*': 
+            if board[row][col] =='*': 
                 # this mean we've actually planted a bomb ther alreadt so keep going 
                  continue 
            
@@ -56,9 +56,9 @@ class Board:
         # now that we have the bombs planted lets assign a number 0-8 for all the empty spaces which 
         # reprents how many neighboring bombs there are. we can precompute thse and it'll save us some 
         # effort checking what's around the board later on :).
-        for r in range (self.dim_size):
+        for r in range(self.dim_size):
             for c in range(self.dim_size):
-                if self.board [r][c] == '*':
+                if self.board[r][c] == '*':
                     # if this is already a bomb, we don't want to calculate anything 
                     continue
                 self.board[r][c] = self.get_num_neighboring_bombs(r, c) 
@@ -77,7 +77,7 @@ class Board:
         # make sure to not go out of bounds!
 
         num_neighboring_bombs = 0
-        for r in range(max(0, row-1), min(self.dim_size-1, (row+1))+1):
+        for r in range(max(0, row-1), min(self.dim_size-1, row+1)+1):
             for c in range(max(0, col-1), min(self.dim_size-1, col+1)+1):
                 if r == row and c == col:
                     continue
