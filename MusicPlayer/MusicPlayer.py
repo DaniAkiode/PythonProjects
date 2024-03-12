@@ -1,3 +1,4 @@
+from tkinter import filedialog
 from tkinter import * 
 import pygame 
 import os
@@ -9,6 +10,31 @@ root.geometry("500x300")
 
 pygame.mixer.init() #initiate mixer in python in order to play autio
 
+menubar = Menu(root)
+root.config(menu=menubar)
+
+songs = []
+current_song = ""
+paused = False
+
+def load_music():
+    global current_song
+    root.directory = filedialog.askdirectory()
+
+    for song in os.listdir(root.directory):
+        name, ext = os.path.splitext(song)
+        if ext == '.mp3':
+            songs.append(song)
+    for song in songs: 
+        songlist.insert("end", song)
+
+    songlist.selection_set(0)
+    current_song = song[songlist.curselection()[0]]
+
+
+organise_menu = Menu(menubar, tearoff=False)
+organise_menu.add_command(label= 'Select Folder', command=load_music)
+menubar.add_cascade(label='Organise', menu=organise_menu)
 
 songlist = Listbox(root, bg="black", fg="white", width=100, height=15 )
 songlist.pack() #add on window 
