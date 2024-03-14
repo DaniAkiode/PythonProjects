@@ -43,7 +43,7 @@ def play_music():
 
 def pause_music():
     global paused 
-    pygame.mixer.music.paused()
+    pygame.mixer.music.pause()
     paused = True
 
 def next_music():
