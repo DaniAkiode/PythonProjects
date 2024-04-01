@@ -18,13 +18,9 @@ current_song = ""
 paused = False
 
 def load_music():
-    global current_song
+    global current_song, songs
     root.directory = filedialog.askdirectory()
-
-    for song in os.listdir(root.directory):
-        name, ext = os.path.splitext(song)
-        if ext == '.mp3':
-            songs.append(song)
+    songs = [song for song in os.listdir(root.directory) if song.endswith('.mp3')]
     for song in songs: 
         songlist.insert("end", song)
 
